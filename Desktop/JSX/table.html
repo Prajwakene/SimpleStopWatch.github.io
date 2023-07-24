@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- REACT -->
+     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+     <!-- BABEL CDN to convert the JSX in to the javascript -->
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function App(){
+            let students =[
+                {
+                    name:"Prajwal",
+                    age:10,
+                    marks:15
+                },
+                {
+                    name:"Priya",
+                    age:7,
+                    marks:18
+                },
+                {
+                    name:"Pratik",
+                    age:12,
+                    marks:16
+                }];
+            return(
+                <>
+                <h1>Students's Details</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>AGE</th>
+                            <th>MARKS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {students.map((student, index) => (
+                            <tr key ={index}>
+                                <td>{student.name}</td>
+                                <td>{student.age}</td>
+                                <td>{student.marks}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                    </table>
+                </>
+            )
+        }
+        const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(<App />);
+    </script>
+</body>
+</html>

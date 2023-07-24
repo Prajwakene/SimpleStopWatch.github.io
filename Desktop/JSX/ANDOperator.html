@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Conditional rendering using && operator</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function App(){
+            let loggedIn = true;
+            return(
+                <>
+                <h1>Hello{loggedIn?"Alexa":"User"}</h1>
+                { loggedIn && <p>Welcome to the portal</p>};
+                </>
+            )
+        }
+        const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(<App />);
+    </script>
+</body>
+</html>
